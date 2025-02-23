@@ -1,12 +1,9 @@
 {
-  "name": "data-structures-algorithms",
+  "name": "fibonacci-examples",
   "version": "1.0.0",
-  "main": "accumulator.js",
+  "description": "Fibonacci sequence implementations",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  }
 }
