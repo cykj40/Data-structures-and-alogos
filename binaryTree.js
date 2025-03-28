@@ -37,7 +37,28 @@ function traverseBinaryTree(tree) {
     traverseBinaryTree(tree.right);
 }
 
+function visualizeTree(node, prefix = '', isLeft = true) {
+    if (!node) return;
+
+    console.log(`${prefix}${isLeft ? '├── ' : '└── '}${node.value}`);
+
+    // Compute the new prefix for children
+    const newPrefix = prefix + (isLeft ? '│   ' : '    ');
+
+    // Recursively visualize left and right subtrees
+    if (node.left || node.right) {
+        if (node.left) visualizeTree(node.left, newPrefix, node.right !== null);
+        if (node.right) visualizeTree(node.right, newPrefix, false);
+    }
+}
+
+// Original traversal (unchanged)
+console.log("Original traversal (pre-order):");
 traverseBinaryTree(binaryTree);
+
+// Add visualization
+console.log("\nTree visualization:");
+visualizeTree(binaryTree, '', false);
 
 
 
